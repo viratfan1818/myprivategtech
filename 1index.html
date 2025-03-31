@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Upload Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Video Upload and View Platform</h1>
+        
+        <!-- Folders Navigation -->
+        <div class="folders">
+            <button onclick="showVideos('FEEE')">FEEE</button>
+            <button onclick="showVideos('IT')">IT</button>
+            <button onclick="showVideos('Mechanics')">Mechanics</button>
+            <button onclick="showVideos('Environmental Science')">Environmental Science</button>
+            <button onclick="showVideos('Math')">Math</button>
+            <button onclick="showVideos('Physics')">Physics</button>
+        </div>
+        
+        <!-- Video Upload Section (Only for Admin) -->
+        <div id="uploadSection" class="upload-section">
+            <h2>Upload Video (Admin Only)</h2>
+            <form id="uploadForm" action="#" method="POST" enctype="multipart/form-data">
+                <input type="file" name="video" id="videoFile" accept="video/*">
+                <input type="text" id="videoTitle" placeholder="Enter Video Title" required>
+                <select id="videoFolder" required>
+                    <option value="FEEE">FEEE</option>
+                    <option value="IT">IT</option>
+                    <option value="Mechanics">Mechanics</option>
+                    <option value="Environmental Science">Environmental Science</option>
+                    <option value="Math">Math</option>
+                    <option value="Physics">Physics</option>
+                </select>
+                <button type="submit">Upload Video</button>
+            </form>
+        </div>
+        
+        <!-- Video Display Section -->
+        <div id="videoDisplay" class="video-display">
+            <h2>Available Videos</h2>
+            <div id="videoList"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
